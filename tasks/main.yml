@@ -1,5 +1,6 @@
 ---
 # tasks file for android-sdk
-- include: dependencies.yml
-- include: sdktools.yml
-- include: sdksinstall.yml
+- include: check_environment.yml
+
+- include: install.yml
+  when: android_sdk_installed is defined or android_sdk_upgrade

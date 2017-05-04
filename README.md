@@ -73,6 +73,13 @@ The actual Android SDK packages to install using the SDK manager.
       roles:
         - { role: nickp666.android-sdk }
 
+## Run the test case
+
+We are using docker to build and test the role, please ensure you have docker
+installed in your machine before running this command.
+
+`$ docker build .`
+
 ## License
 
 BSD

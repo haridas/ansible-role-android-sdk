@@ -7,7 +7,12 @@
   get_url: url={{ android_sdk_download_location }} dest={{ android_sdk_install_location }}/sdk-download.tgz
 
 - name: Extract Android SDK tools
-  unarchive: src={{ android_sdk_install_location }}/sdk-download.tgz dest={{ android_sdk_install_location }} copy=no
+  unarchive: 
+      src={{ android_sdk_install_location }}/sdk-download.tgz
+      dest={{ android_sdk_install_location }}
+      copy=no
+      owner={{ ansible_user }}
+      group={{ ansible_user }}
 
 - name: Put the SDK install expect script in place
   template: src=sdk-install.expect.j2 dest={{ android_sdk_install_location }}/sdk-install.expect mode=0755
